@@ -9,19 +9,19 @@ module.exports = {
 }
 
 async function index(req, res) {
-	const Bloggers = await Blogger.find({});
-	res.status(200).json(Bloggers);
+	const bloggers = await Blogger.find({});
+	res.status(200).json(bloggers);
 }
 
 async function create(req, res) {
 	req.body.user = req.user._id;
-	const Blogger = await Blogger.create(req.body);
-	res.status(201).json(Blogger);
+	const blogger = await Blogger.create(req.body);
+	res.status(201).json(blogger);
 }
 
 async function show(req, res) {
-	const Blogger = await Blogger.findById(req.params.id);
-	res.status(200).json(Blogger);
+	const blogger = await Blogger.findById(req.params.id);
+	res.status(200).json(blogger);
 }
 
 async function update(req, res) {

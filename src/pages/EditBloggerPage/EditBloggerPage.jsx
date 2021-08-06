@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export default function EditBloggerPage( {handleUpdateBlogger} ) {
+export default function EditBloggerPage( {props} ) {
 	const location = useLocation();
 
 	const [invalidForm, setValidForm] = useState(true);
@@ -17,7 +17,7 @@ export default function EditBloggerPage( {handleUpdateBlogger} ) {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		handleUpdateBlogger(formData);
+		props.handleUpdateBlogger(formData);
 	};
 
 	const handleChange = e => {
